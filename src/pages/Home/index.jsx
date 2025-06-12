@@ -4,6 +4,7 @@ import DentalScene from "../../components/ui/3d/DentalScene";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import MedicalInfoSection from "../../components/ui/MedicalInfoSection";
 import { Suspense } from "react";
+import Gallery from "../../components/ui/Gallery";
 
 export default function Home() {
   return (
@@ -74,7 +75,6 @@ export default function Home() {
                 services
               </p>
             </m.div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
@@ -160,9 +160,11 @@ export default function Home() {
                   </div>
                 </m.div>
               ))}
-            </div>
+            </div>{" "}
           </div>
         </section>
+        {/* Gallery Section */}
+        <Gallery />
         {/* Newsletter Section */}
         <section className="bg-primary/10 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

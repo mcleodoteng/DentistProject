@@ -4,6 +4,7 @@ import {
   Environment,
   Html,
   useGLTF,
+  useTexture,
   Stage,
   AccumulativeShadows,
   RandomizedLight,
@@ -24,9 +25,20 @@ function Loader() {
 }
 
 function TeethModel() {
-  const { scene, materials } = useGLTF("/models/teeth/scene.gltf");
+  const { scene, nodes, materials } = useGLTF("/models/teeth/scene.gltf");
+  const [gumsTexture, tongueTexture] = useTexture([
+    "/models/teeth/textures/Gums_diffuse.png",
+    "/models/teeth/textures/Tongue_diffuse.png",
+  ]);
 
   useEffect(() => {
+    // Configure textures
+    [gumsTexture, tongueTexture].forEach((texture) => {
+      texture.flipY = false;
+      texture.encoding = THREE.sRGBEncoding;
+      texture.needsUpdate = true;
+    });
+
     scene.traverse((child) => {
       if (child.isMesh) {
         // Enhanced materials
@@ -34,21 +46,33 @@ function TeethModel() {
         child.receiveShadow = true;
 
         if (child.material) {
+          // Base material properties
           child.material.roughness = 0.3;
-          child.material.metalness = 0.4;
-          child.material.clearcoat = 0.5;
-          child.material.clearcoatRoughness = 0.2;
+          child.material.metalness = 0.2;
+          child.material.clearcoat = 0.8;
+          child.material.clearcoatRoughness = 0.1;
 
-          // Add subtle color variations for teeth
+          // Apply specific textures and properties based on mesh name
           if (child.name.toLowerCase().includes("teeth")) {
-            child.material.color = new THREE.Color("#f5f5f5");
+            child.material.color = new THREE.Color("#ffffff");
             child.material.emissive = new THREE.Color("#1a1a1a");
-            child.material.emissiveIntensity = 0.1;
+            child.material.emissiveIntensity = 0.05;
+            child.material.roughness = 0.2;
+            child.material.metalness = 0.3;
+            child.material.clearcoat = 1;
           }
-          // Add pinkish tint for gums
+          // Apply gums texture and properties
           if (child.name.toLowerCase().includes("gum")) {
-            child.material.color = new THREE.Color("#ff9e9e");
-            child.material.roughness = 0.6;
+            child.material.map = gumsTexture;
+            child.material.roughness = 0.7;
+            child.material.metalness = 0.1;
+            child.material.clearcoat = 0.3;
+          }
+          // Apply tongue texture
+          if (child.name.toLowerCase().includes("tongue")) {
+            child.material.map = tongueTexture;
+            child.material.roughness = 0.8;
+            child.material.metalness = 0;
           }
         }
 
@@ -61,15 +85,16 @@ function TeethModel() {
 
   return (
     <>
+      {" "}
       <Stage
-        environment="city"
-        intensity={0.5}
+        environment="warehouse"
+        intensity={1}
         adjustCamera={false}
         shadows={{
           type: "accumulative",
-          color: "pink",
+          color: "#ffd1d1",
           colorBlend: 2,
-          opacity: 1,
+          opacity: 0.8,
         }}
       >
         <primitive
