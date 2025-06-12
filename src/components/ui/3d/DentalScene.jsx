@@ -10,7 +10,7 @@ import {
   ContactShadows,
 } from "@react-three/drei";
 import { Suspense, useEffect } from "react";
-import * as THREE from 'three';
+import * as THREE from "three";
 
 function Loader() {
   return (
@@ -32,22 +32,22 @@ function TeethModel() {
         // Enhanced materials
         child.castShadow = true;
         child.receiveShadow = true;
-        
+
         if (child.material) {
           child.material.roughness = 0.3;
           child.material.metalness = 0.4;
           child.material.clearcoat = 0.5;
           child.material.clearcoatRoughness = 0.2;
-          
+
           // Add subtle color variations for teeth
-          if (child.name.toLowerCase().includes('teeth')) {
-            child.material.color = new THREE.Color('#f5f5f5');
-            child.material.emissive = new THREE.Color('#1a1a1a');
+          if (child.name.toLowerCase().includes("teeth")) {
+            child.material.color = new THREE.Color("#f5f5f5");
+            child.material.emissive = new THREE.Color("#1a1a1a");
             child.material.emissiveIntensity = 0.1;
           }
           // Add pinkish tint for gums
-          if (child.name.toLowerCase().includes('gum')) {
-            child.material.color = new THREE.Color('#ff9e9e');
+          if (child.name.toLowerCase().includes("gum")) {
+            child.material.color = new THREE.Color("#ff9e9e");
             child.material.roughness = 0.6;
           }
         }
@@ -65,7 +65,12 @@ function TeethModel() {
         environment="city"
         intensity={0.5}
         adjustCamera={false}
-        shadows={{ type: 'accumulative', color: 'pink', colorBlend: 2, opacity: 1 }}
+        shadows={{
+          type: "accumulative",
+          color: "pink",
+          colorBlend: 2,
+          opacity: 1,
+        }}
       >
         <primitive
           object={scene}
@@ -87,7 +92,9 @@ function TeethModel() {
 
 export default function DentalScene() {
   return (
-    <div className="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl bg-gradient-to-b from-blue-50 to-white">      <Canvas
+    <div className="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl bg-gradient-to-b from-blue-50 to-white">
+      {" "}
+      <Canvas
         dpr={[1, 2]}
         camera={{ position: [5, 2, 5], fov: 45 }}
         shadows="soft"
@@ -95,7 +102,7 @@ export default function DentalScene() {
           preserveDrawingBuffer: true,
           antialias: true,
           alpha: true,
-          powerPreference: "high-performance"
+          powerPreference: "high-performance",
         }}
         performance={{ min: 0.5 }}
       >
@@ -112,12 +119,11 @@ export default function DentalScene() {
           rotateSpeed={0.8}
           target={[0, 0, 0]}
         />
-        
         {/* Enhanced Lighting Setup */}
         <ambientLight intensity={0.5} />
-        <directionalLight 
-          position={[10, 10, 5]} 
-          intensity={1} 
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={1}
           castShadow
           shadow-mapSize={[2048, 2048]}
         />
