@@ -40,8 +40,15 @@ export default function Home() {
         </section>
         {/* Medical Info Section with Statistics */}
         <MedicalInfoSection /> <Features />
+        <div>
+          <img
+            src="/Images/BG.png"
+            alt="Background"
+            className="w-96 h-80 object-contain ml-72 relative z-10 "
+          />
+        </div>
         {/* Animated Cards Section */}
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-24 overflow-hidden -mt-40">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img

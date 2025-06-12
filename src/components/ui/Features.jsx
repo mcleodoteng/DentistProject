@@ -27,7 +27,8 @@ const features = [
   },
   {
     name: "Educational Resources",
-    description: "Access comprehensive dental health education materials.",
+    description:
+      "Access comprehensive dental health education materials anywhere.",
     icon: FaBookMedical,
   },
 ];
