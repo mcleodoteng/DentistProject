@@ -25,18 +25,22 @@ function Loader() {
 }
 
 function TeethModel() {
-  const { scene, nodes, materials } = useGLTF("/models/teeth/scene.gltf");
-  const [gumsTexture, tongueTexture] = useTexture([
-    "/models/teeth/textures/Gums_diffuse.png",
-    "/models/teeth/textures/Tongue_diffuse.png",
-  ]);
-
+  const modelPath = "/models/teeth/scene.gltf";
+  const { scene } = useGLTF(modelPath, true);
+  const textures = useTexture({
+    gums: "/models/teeth/textures/Gums_diffuse.png",
+    tongue: "/models/teeth/textures/Tongue_diffuse.png",
+  });
   useEffect(() => {
+    if (!textures.gums || !textures.tongue) return;
+
     // Configure textures
-    [gumsTexture, tongueTexture].forEach((texture) => {
-      texture.flipY = false;
-      texture.encoding = THREE.sRGBEncoding;
-      texture.needsUpdate = true;
+    Object.values(textures).forEach((texture) => {
+      if (texture) {
+        texture.flipY = false;
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.needsUpdate = true;
+      }
     });
 
     scene.traverse((child) => {
@@ -60,17 +64,16 @@ function TeethModel() {
             child.material.roughness = 0.2;
             child.material.metalness = 0.3;
             child.material.clearcoat = 1;
-          }
-          // Apply gums texture and properties
-          if (child.name.toLowerCase().includes("gum")) {
-            child.material.map = gumsTexture;
+          } // Apply gums texture and properties
+          if (child.name.toLowerCase().includes("gum") && textures.gums) {
+            child.material.map = textures.gums;
             child.material.roughness = 0.7;
             child.material.metalness = 0.1;
             child.material.clearcoat = 0.3;
           }
           // Apply tongue texture
-          if (child.name.toLowerCase().includes("tongue")) {
-            child.material.map = tongueTexture;
+          if (child.name.toLowerCase().includes("tongue") && textures.tongue) {
+            child.material.map = textures.tongue;
             child.material.roughness = 0.8;
             child.material.metalness = 0;
           }
@@ -81,7 +84,7 @@ function TeethModel() {
         }
       }
     });
-  }, [scene]);
+  }, [scene, textures]);
 
   return (
     <>

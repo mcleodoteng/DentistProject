@@ -1,7 +1,9 @@
+// @ts-check
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+/** @type {import('firebase/app').FirebaseOptions} */
 const firebaseConfig = {
   // TODO: Replace with your Firebase configuration
   apiKey: "your-api-key",
