@@ -15,7 +15,7 @@ const blogPosts = [
     excerpt:
       "Master the fundamentals of oral health with our comprehensive guide to daily dental care routines.",
     category: "Oral Hygiene",
-    image: "/src/assets/images/blog/oral-hygiene.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "essential-oral-hygiene-tips",
     readTime: 5,
     tags: ["Brushing", "Flossing", "Mouthwash", "Daily Routine"],
@@ -61,7 +61,7 @@ const blogPosts = [
     excerpt:
       "A parent's guide to managing dental milestones and preventing common childhood dental issues.",
     category: "Pediatric Care",
-    image: "/src/assets/images/blog/pediatric-care.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "common-dental-problems-children",
     readTime: 7,
     tags: ["Children", "Development", "Prevention"],
@@ -107,7 +107,7 @@ const blogPosts = [
     excerpt:
       "Learn how to handle dental emergencies effectively with our step-by-step emergency response guide.",
     category: "Emergency Care",
-    image: "/src/assets/images/blog/emergency-care.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "emergency-dental-care-guide",
     readTime: 6,
     tags: ["Emergency", "First Aid", "Urgent Care"],
@@ -155,7 +155,7 @@ const blogPosts = [
     excerpt:
       "Discover the latest advances in preventive dental care and how they can benefit your oral health.",
     category: "Preventive Care",
-    image: "/src/assets/images/blog/preventive-care.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "modern-preventive-dentistry",
     readTime: 8,
     tags: ["Prevention", "Technology", "Wellness"],
@@ -201,7 +201,7 @@ const blogPosts = [
     excerpt:
       "Explore the crucial connection between your diet and dental health with evidence-based insights.",
     category: "Oral Hygiene",
-    image: "/src/assets/images/blog/nutrition-dental.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "nutrition-oral-health",
     readTime: 6,
     tags: ["Nutrition", "Diet", "Health"],
@@ -245,7 +245,7 @@ const blogPosts = [
     excerpt:
       "Explore modern cosmetic dentistry procedures that can transform your smile.",
     category: "Preventive Care",
-    image: "/src/assets/images/blog/cosmetic-dentistry.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "cosmetic-dentistry-guide",
     readTime: 7,
     tags: ["Cosmetic", "Veneers", "Whitening"],
@@ -279,7 +279,7 @@ const blogPosts = [
     excerpt:
       "Learn about the causes, prevention, and treatment of periodontal disease.",
     category: "Oral Hygiene",
-    image: "/src/assets/images/blog/gum-disease.jpg",
+    image: "/Images/IMG (3).jpg",
     slug: "gum-disease-guide",
     readTime: 8,
     tags: ["Periodontal", "Prevention", "Treatment"],

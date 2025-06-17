@@ -4,16 +4,18 @@ import Navbar from "./Navbar";
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
+      <Navbar />{" "}
+      <main className="flex-grow px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
         <Outlet />
       </main>
-      <footer className="bg-primary text-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold font-heading mb-4">DentCare</h3>
-              <p className="text-sm">
+      <footer className="bg-primary text-white mt-8 sm:mt-12">
+        <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-bold font-heading mb-3 sm:mb-4">
+                DentCare
+              </h3>
+              <p className="text-xs sm:text-sm">
                 Providing accessible dental care and education to underserved
                 communities.
               </p>

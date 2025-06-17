@@ -17,15 +17,18 @@ const TeamMember = ({ name, role, image, bio, social }) => {
           className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      </div>
-
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900">{name}</h3>
-        <p className="mt-1 text-sm font-medium text-primary">{role}</p>
-        <p className="mt-3 text-base text-gray-600">{bio}</p>
+      </div>{" "}
+      <div className="p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{name}</h3>
+        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-medium text-primary">
+          {role}
+        </p>
+        <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-600 line-clamp-3 sm:line-clamp-none">
+          {bio}
+        </p>
 
         {/* Social links */}
-        <div className="mt-4 flex space-x-4">
+        <div className="mt-3 sm:mt-4 flex space-x-3 sm:space-x-4">
           {social?.linkedin && (
             <a
               href={social.linkedin}

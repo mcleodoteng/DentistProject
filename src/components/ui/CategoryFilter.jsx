@@ -6,12 +6,12 @@ export default function CategoryFilter({
   onCategoryChange,
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5 sm:gap-2">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => onCategoryChange("all")}
-        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+        className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
           activeCategory === "all"
             ? "bg-primary text-white"
             : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -25,7 +25,7 @@ export default function CategoryFilter({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
             activeCategory === category
               ? "bg-primary text-white"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"

@@ -120,7 +120,7 @@ function TeethModel() {
 
 export default function DentalScene() {
   return (
-    <div className="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl bg-gradient-to-b from-blue-50 to-white">
+    <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] w-full rounded-xl overflow-hidden shadow-2xl bg-gradient-to-b from-blue-50 to-white">
       {" "}
       <Canvas
         dpr={[1, 2]}
@@ -172,13 +172,16 @@ export default function DentalScene() {
         <Environment preset="studio" />
         <color attach="background" args={["#f8fafc"]} />{" "}
       </Canvas>
-      {/* Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 text-center text-sm bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-        <p className="font-medium text-gray-800 mb-1">
+      {/* Overlay */}{" "}
+      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 text-center text-xs sm:text-sm bg-white/90 backdrop-blur-sm p-2 sm:p-4 rounded-lg shadow-lg">
+        <p className="font-medium text-gray-800 mb-0.5 sm:mb-1">
           3D Dental Visualization
         </p>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
           Drag to rotate • Scroll to zoom • Double click to reset view
+        </p>
+        <p className="text-gray-600 text-xs block sm:hidden">
+          Tap and drag to rotate • Pinch to zoom
         </p>
       </div>
     </div>

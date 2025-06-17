@@ -28,12 +28,14 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
   return (
     <div className="border-b border-gray-200">
       <button
-        className="w-full py-4 flex justify-between items-center text-left focus:outline-none"
+        className="w-full py-3 sm:py-4 flex justify-between items-center text-left focus:outline-none group"
         onClick={onToggle}
       >
-        <span className="text-lg font-medium text-gray-900">{question}</span>
+        <span className="text-base sm:text-lg font-medium text-gray-900 group-hover:text-primary transition-colors">
+          {question}
+        </span>
         <span
-          className={`ml-6 flex-shrink-0 transition-transform duration-200 ${
+          className={`ml-4 sm:ml-6 flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -61,7 +63,9 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="py-4 text-base text-gray-600">{answer}</div>
+            <div className="py-3 sm:py-4 text-sm sm:text-base text-gray-600 pr-4">
+              {answer}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

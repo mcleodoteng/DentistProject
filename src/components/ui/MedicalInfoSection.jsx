@@ -10,25 +10,25 @@ export default function MedicalInfoSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-gray-900 font-heading leading-tight">
+            <div className="space-y-3 sm:space-y-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 font-heading leading-tight">
                 Expert Dental Care{" "}
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   You Can Trust
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Our dedicated team of dental professionals brings years of
                 experience and a commitment to providing the highest quality
                 care. We use state-of-the-art technology and proven techniques
@@ -37,7 +37,7 @@ export default function MedicalInfoSection() {
             </div>
 
             {/* Counters Grid */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat, index) => (
                 <CounterCard key={index} {...stat} />
               ))}

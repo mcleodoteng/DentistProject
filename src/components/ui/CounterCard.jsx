@@ -34,18 +34,18 @@ export default function CounterCard({ value, label }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+      className="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
     >
       <div className="relative overflow-hidden">
         {/* Background gradient effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
 
         {/* Content */}
-        <div className="relative text-center space-y-2">
-          <span className="block text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent group-hover:scale-105 transform transition-transform duration-300">
+        <div className="relative text-center space-y-1 sm:space-y-2">
+          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent group-hover:scale-105 transform transition-transform duration-300">
             {count}+
           </span>
-          <span className="block text-gray-600 font-medium group-hover:text-primary transition-colors duration-300">
+          <span className="block text-sm sm:text-base text-gray-600 font-medium group-hover:text-primary transition-colors duration-300">
             {label}
           </span>
         </div>

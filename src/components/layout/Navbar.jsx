@@ -14,16 +14,17 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+      {" "}
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between h-14 sm:h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
                 src="/Images/Logo.png"
                 alt="DentCare Logo"
-                className="h-8 w-8 mr-2"
+                className="h-6 w-6 sm:h-8 sm:w-8 mr-1 sm:mr-2"
               />
-              <span className="text-primary font-heading text-2xl font-bold">
+              <span className="text-primary font-heading text-lg sm:text-2xl font-bold">
                 DentCare
               </span>
             </Link>
@@ -87,7 +88,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">

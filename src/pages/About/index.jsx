@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Dr. Sarah Johnson",
     role: "Lead Dentist & Founder",
-    image: "/src/assets/images/team/sarah.jpg",
+    image: "/Images/IMG (3).jpg",
     bio: "Over 15 years of experience in dental care and community service.",
     social: {
       linkedin: "https://linkedin.com/in/sarah-johnson",
@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: "Dr. Michael Chen",
     role: "Dental Surgeon",
-    image: "/src/assets/images/team/michael.jpg",
+    image: "/Images/IMG (3).jpg",
     bio: "Specializes in oral surgery and emergency dental care.",
     social: {
       linkedin: "https://linkedin.com/in/michael-chen",
@@ -25,7 +25,7 @@ const teamMembers = [
   {
     name: "Emma Williams",
     role: "Community Outreach Director",
-    image: "/src/assets/images/team/emma.jpg",
+    image: "/Images/IMG (3).jpg",
     bio: "Passionate about making dental care accessible to all communities.",
     social: {
       twitter: "https://twitter.com/emmawilliams",
