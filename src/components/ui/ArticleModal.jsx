@@ -32,19 +32,18 @@ export default function ArticleModal({ article, onClose }) {
     >
       {/* Overlay */}
       <div className="fixed inset-0 bg-black/5" />
-      {/* Modal */}{" "}
+      {/* Modal */}
       <div className="min-h-screen px-3 sm:px-4 py-6 sm:py-8 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ type: "tween", duration: 0.2 }}
-          className="relative w-full max-w-4xl bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6"
+          className="relative w-full max-w-4xl bg-white rounded-xl sm:rounded-2xl shadow-xl overflow-hidden max-h-[90vh] flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Content */}
-          <div className="space-y-6">
-            {/* Header */}{" "}
+          {/* Fixed Header */}
+          <div className="p-4 sm:p-6 bg-white border-b sticky top-0 z-10">
             <div className="flex justify-between items-start gap-4">
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
                 {article.title}
@@ -64,9 +63,11 @@ export default function ArticleModal({ article, onClose }) {
                 </button>
               </div>
             </div>
-            {/* Main Content */}
+          </div>
+
+          {/* Scrollable Content */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 pt-2 sm:pt-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
             <div className="space-y-6">
-              {" "}
               {article.image && (
                 <img
                   src={article.image}
@@ -88,8 +89,8 @@ export default function ArticleModal({ article, onClose }) {
                   ))}
                 </div>
               )}
-              {/* Article content */}{" "}
-              <div className="prose prose-sm sm:prose md:prose-lg max-w-none overflow-auto">
+              {/* Article content */}
+              <div className="prose prose-sm sm:prose md:prose-lg max-w-none">
                 {article.content}
               </div>
               {/* Author info */}
